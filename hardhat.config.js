@@ -32,7 +32,15 @@ module.exports = {
     tests: "./test",
   },
   solidity: {
-    version: "0.8.17",
+    version: '0.8.9',
+    defaultNetwork: 'sepolia',
+    networks: {
+      hardhat: {},
+      sepolia: {
+        url: 'https://rpc2.sepolia.org/',
+        accounts: ['0x${process.env.PRIVATE_KEY}']
+      }
+    },
     settings: {
       optimizer: {
         enabled: true,
